@@ -1,0 +1,2542 @@
+/* ===========================================
+   NICE TRY ($NT)
+   MANIFEST
+
+   File: manifest.css
+=========================================== */
+
+
+:root {
+
+    --bg: #050407;
+    --bg-soft: #0a080d;
+
+    --surface: rgba(16, 12, 21, .88);
+    --surface-solid: #100d14;
+    --surface-hover: #17111f;
+
+    --purple: #7c3aed;
+    --purple-light: #a855f7;
+    --purple-dark: #4c1d95;
+
+    --purple-soft: rgba(124, 58, 237, .13);
+    --purple-border: rgba(168, 85, 247, .30);
+
+    --text: #ffffff;
+    --muted: #aaa3b2;
+    --dim: #706977;
+
+    --border: rgba(255, 255, 255, .10);
+
+    --green: #4ade80;
+
+    --radius: 26px;
+
+    --max-width: 1180px;
+
+    --transition: .25s ease;
+
+}
+
+
+
+/* ===========================================
+   RESET
+=========================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 110px;
+
+}
+
+
+body {
+
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    background: #050407;
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.5;
+
+}
+
+
+::selection {
+
+    background: var(--purple);
+
+    color: white;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+
+/* ===========================================
+   BACKGROUND
+=========================================== */
+
+.pageBackground {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(5, 4, 7, .96) 0%,
+            rgba(5, 4, 7, .80) 40%,
+            rgba(5, 4, 7, .50) 72%,
+            rgba(5, 4, 7, .90) 100%
+        ),
+
+        url("../assets/nt-bg.png");
+
+    background-size: cover;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
+
+    opacity: .52;
+
+}
+
+
+.pageOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 10%,
+            rgba(124, 58, 237, .17),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            to bottom,
+            rgba(5, 4, 7, .05),
+            #050407 950px
+        );
+
+}
+
+
+.pageOverlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .14;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, .025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, .025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+}
+
+
+
+/* ===========================================
+   HEADER
+=========================================== */
+
+.manifestHeader {
+
+    width: min(calc(100% - 48px), var(--max-width));
+
+    min-height: 76px;
+
+    margin: 18px auto 0;
+
+    padding: 12px 14px 12px 18px;
+
+    position: sticky;
+
+    top: 14px;
+
+    z-index: 100;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: rgba(8, 6, 11, .76);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, .28);
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+}
+
+
+.brand img {
+
+    width: 46px;
+
+    height: 46px;
+
+    object-fit: contain;
+
+}
+
+
+.brand div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+
+}
+
+
+.brand strong {
+
+    font-size: 14px;
+
+    font-weight: 950;
+
+    letter-spacing: .08em;
+
+}
+
+
+.brand span {
+
+    margin-top: 6px;
+
+    color: var(--purple-light);
+
+    font-size: 10px;
+
+    font-weight: 950;
+
+    letter-spacing: .18em;
+
+}
+
+
+.headerTitle {
+
+    color: #928a99;
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .28em;
+
+}
+
+
+.homeLink {
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    color: #08060b;
+
+    border-radius: 11px;
+
+    font-size: 10px;
+
+    font-weight: 950;
+
+    letter-spacing: .10em;
+
+    transition: var(--transition);
+
+}
+
+
+.homeLink:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--purple-light);
+
+    color: white;
+
+    box-shadow:
+        0 12px 35px rgba(124, 58, 237, .30);
+
+}
+
+
+
+/* ===========================================
+   PAGE
+=========================================== */
+
+.manifestPage {
+
+    width: min(calc(100% - 48px), var(--max-width));
+
+    margin: 0 auto;
+
+}
+
+
+
+/* ===========================================
+   HERO
+=========================================== */
+
+.manifestHero {
+
+    min-height: 820px;
+
+    padding: 105px 20px 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(390px, .95fr);
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.heroCopy {
+
+    position: relative;
+
+    z-index: 5;
+
+    animation: fadeUp .7s ease both;
+
+}
+
+
+.eyebrow {
+
+    width: fit-content;
+
+    margin-bottom: 28px;
+
+    padding: 10px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: var(--purple-soft);
+
+    border: 1px solid var(--purple-border);
+
+    border-radius: 100px;
+
+    color: #d8c6ef;
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .19em;
+
+}
+
+
+.eyebrow span {
+
+    width: 7px;
+
+    height: 7px;
+
+    display: block;
+
+    background: var(--purple-light);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px var(--purple-light);
+
+}
+
+
+.manifestHero h1 {
+
+    max-width: 720px;
+
+    font-size: clamp(62px, 7vw, 105px);
+
+    line-height: .84;
+
+    font-weight: 1000;
+
+    letter-spacing: -.075em;
+
+}
+
+
+.manifestHero h1 strong {
+
+    color: var(--purple-light);
+
+    font-weight: inherit;
+
+    text-shadow:
+        0 0 45px rgba(168, 85, 247, .16);
+
+}
+
+
+.heroLead {
+
+    max-width: 520px;
+
+    margin-top: 35px;
+
+    color: #c2bbc7;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+}
+
+
+.heroPhrase {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-size: 11px;
+
+    font-weight: 950;
+
+    letter-spacing: .17em;
+
+}
+
+
+.heroPhrase span {
+
+    color: var(--muted);
+
+}
+
+
+.heroPhrase strong {
+
+    margin-top: 5px;
+
+    color: white;
+
+}
+
+
+.startReading {
+
+    width: fit-content;
+
+    min-height: 58px;
+
+    margin-top: 38px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    background: var(--purple);
+
+    color: white;
+
+    border-radius: 13px;
+
+    font-size: 11px;
+
+    font-weight: 950;
+
+    letter-spacing: .11em;
+
+    box-shadow:
+        0 12px 40px rgba(124, 58, 237, .24);
+
+    transition: var(--transition);
+
+}
+
+
+.startReading:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--purple-light);
+
+    box-shadow:
+        0 18px 55px rgba(124, 58, 237, .35);
+
+}
+
+
+
+/* ===========================================
+   HERO CAT
+=========================================== */
+
+.heroVisual {
+
+    min-height: 620px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: fadeIn .9s ease both;
+
+}
+
+
+.catGlow {
+
+    width: 500px;
+
+    height: 500px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(124, 58, 237, .32),
+            rgba(124, 58, 237, .08) 45%,
+            transparent 70%
+        );
+
+    filter: blur(22px);
+
+}
+
+
+.manifestCat {
+
+    width: min(100%, 540px);
+
+    position: relative;
+
+    z-index: 2;
+
+    object-fit: contain;
+
+    border-radius: 42px;
+
+    transform: rotate(1deg);
+
+    filter:
+        drop-shadow(0 40px 70px rgba(0, 0, 0, .65))
+        drop-shadow(0 0 40px rgba(124, 58, 237, .20));
+
+    transition: .5s ease;
+
+}
+
+
+.heroVisual:hover .manifestCat {
+
+    transform:
+        rotate(-1deg)
+        translateY(-5px);
+
+}
+
+
+.sticker {
+
+    position: absolute;
+
+    z-index: 5;
+
+    padding: 9px 14px;
+
+    background: white;
+
+    color: #08060b;
+
+    border: 3px solid #08060b;
+
+    font-size: 17px;
+
+    font-weight: 1000;
+
+    letter-spacing: .06em;
+
+    box-shadow:
+        6px 6px 0 var(--purple);
+
+}
+
+
+.stickerOne {
+
+    top: 15%;
+
+    left: 0;
+
+    transform: rotate(-9deg);
+
+}
+
+
+.stickerTwo {
+
+    right: -10px;
+
+    bottom: 22%;
+
+    transform: rotate(7deg);
+
+    background: var(--purple);
+
+    color: white;
+
+    box-shadow:
+        6px 6px 0 white;
+
+}
+
+
+.catCaption {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 6%;
+
+    bottom: 5%;
+
+    padding: 11px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    background: rgba(5, 4, 7, .84);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(12px);
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .16em;
+
+}
+
+
+.catCaption strong {
+
+    color: var(--purple-light);
+
+}
+
+
+
+/* ===========================================
+   COMMON
+=========================================== */
+
+.sectionLabel {
+
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: var(--purple-light);
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .25em;
+
+}
+
+
+.manifestContent h2,
+.manifestIntro h2,
+.manifestEnd h2 {
+
+    font-size: clamp(42px, 5.3vw, 70px);
+
+    line-height: .92;
+
+    font-weight: 1000;
+
+    letter-spacing: -.06em;
+
+}
+
+
+.manifestContent h2 span,
+.manifestIntro h2 span,
+.manifestEnd h2 span {
+
+    color: var(--purple-light);
+
+}
+
+
+
+/* ===========================================
+   INTRO
+=========================================== */
+
+.manifestIntro {
+
+    min-height: 440px;
+
+    margin-bottom: 30px;
+
+    padding: 60px 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: .4fr 1fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(124, 58, 237, .25),
+            transparent 36%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(20, 15, 27, .94),
+            rgba(9, 7, 12, .94)
+        );
+
+    border: 1px solid var(--purple-border);
+
+    border-radius: 30px;
+
+}
+
+
+.introNumber {
+
+    color: transparent;
+
+    font-size: clamp(130px, 17vw, 230px);
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -.1em;
+
+    -webkit-text-stroke:
+        2px rgba(255, 255, 255, .15);
+
+    transform: rotate(-5deg);
+
+}
+
+
+.introContent {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.introContent p {
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+}
+
+
+
+/* ===========================================
+   MANIFEST CHAPTERS
+=========================================== */
+
+.manifestSection {
+
+    width: 100%;
+
+    min-height: 650px;
+
+    margin-bottom: 30px;
+
+    padding: 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 180px minmax(0, 1fr);
+
+    gap: 60px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(17, 13, 22, .94),
+            rgba(8, 6, 11, .96)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    transition: var(--transition);
+
+}
+
+
+.manifestSection:hover {
+
+    border-color: rgba(168, 85, 247, .20);
+
+}
+
+
+.manifestSection::after {
+
+    content: "";
+
+    width: 360px;
+
+    height: 360px;
+
+    position: absolute;
+
+    right: -190px;
+
+    top: -190px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(124, 58, 237, .07);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+}
+
+
+
+/* ===========================================
+   SECTION SIDE
+=========================================== */
+
+.sectionSide {
+
+    position: relative;
+
+    z-index: 2;
+
+    border-right:
+        1px solid var(--border);
+
+}
+
+
+.sectionNumber {
+
+    display: block;
+
+    color: var(--purple-light);
+
+    font-size: 54px;
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -.07em;
+
+}
+
+
+.sectionWord {
+
+    margin-top: 30px;
+
+    display: block;
+
+    color: #68606f;
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .28em;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+
+}
+
+
+
+/* ===========================================
+   CONTENT
+=========================================== */
+
+.manifestContent {
+
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.manifestContent h2 {
+
+    margin-bottom: 40px;
+
+}
+
+
+.manifestContent > p {
+
+    margin-top: 25px;
+
+    color: #bcb5c1;
+
+    font-size: 16px;
+
+    line-height: 1.95;
+
+}
+
+
+.manifestContent > p:first-of-type {
+
+    margin-top: 0;
+
+}
+
+
+
+/* ===========================================
+   BLOCKQUOTE
+=========================================== */
+
+blockquote {
+
+    margin: 38px 0;
+
+    padding: 28px 30px;
+
+    position: relative;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(124, 58, 237, .15),
+            rgba(124, 58, 237, .025)
+        );
+
+    border-left: 3px solid var(--purple-light);
+
+    border-radius: 0 15px 15px 0;
+
+    color: #d8d1dc;
+
+    font-size: 18px;
+
+    line-height: 1.85;
+
+    font-weight: 700;
+
+}
+
+
+blockquote strong {
+
+    color: white;
+
+    font-weight: 900;
+
+}
+
+
+
+/* ===========================================
+   QUOTE CARD
+=========================================== */
+
+.quoteCard {
+
+    margin: 38px 0;
+
+    padding: 35px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--purple);
+
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: clamp(23px, 3vw, 34px);
+
+    line-height: 1.3;
+
+    font-weight: 1000;
+
+    letter-spacing: -.035em;
+
+    box-shadow:
+        0 25px 60px rgba(76, 29, 149, .20);
+
+}
+
+
+.quoteCard::after {
+
+    content: "NT";
+
+    position: absolute;
+
+    right: -15px;
+
+    bottom: -65px;
+
+    color: rgba(255, 255, 255, .08);
+
+    font-size: 150px;
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -.1em;
+
+}
+
+
+
+/* ===========================================
+   STATEMENT
+=========================================== */
+
+.statement {
+
+    margin: 40px 0;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    background: rgba(255, 255, 255, .035);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    color: #8f8795;
+
+    font-size: 11px;
+
+    font-weight: 950;
+
+    letter-spacing: .15em;
+
+}
+
+
+.statement strong {
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    letter-spacing: -.01em;
+
+}
+
+
+
+/* ===========================================
+   BIG STATEMENT
+=========================================== */
+
+.bigStatement {
+
+    margin: 35px 0 42px;
+
+    padding: 36px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, .20),
+            rgba(255, 255, 255, .025)
+        );
+
+    border: 1px solid var(--purple-border);
+
+    border-radius: 20px;
+
+    color: #aaa2b0;
+
+    font-size: 13px;
+
+    font-weight: 950;
+
+    letter-spacing: .2em;
+
+}
+
+
+.bigStatement strong {
+
+    margin-top: 5px;
+
+    color: white;
+
+    font-size: clamp(38px, 6vw, 70px);
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -.065em;
+
+}
+
+
+
+/* ===========================================
+   THREE WORDS
+=========================================== */
+
+.threeWords {
+
+    margin: 38px 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.threeWords span {
+
+    min-height: 78px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, .035);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 950;
+
+    letter-spacing: .12em;
+
+    transition: var(--transition);
+
+}
+
+
+.threeWords span:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--purple);
+
+    border-color: var(--purple);
+
+}
+
+
+
+/* ===========================================
+   PURPLE CHAPTER
+=========================================== */
+
+.purpleSection {
+
+    background:
+
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(168, 85, 247, .18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(34, 20, 48, .96),
+            rgba(9, 7, 12, .97)
+        );
+
+    border-color: var(--purple-border);
+
+}
+
+
+
+/* ===========================================
+   QUESTION
+=========================================== */
+
+.questionBlock {
+
+    margin: 40px 0;
+
+    padding: 34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    background: #08060b;
+
+    border: 1px solid var(--purple-border);
+
+    border-radius: 18px;
+
+    color: #a79fac;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+.questionBlock span {
+
+    color: #6f6875;
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .22em;
+
+}
+
+
+.questionBlock strong {
+
+    margin-top: 12px;
+
+    color: var(--purple-light);
+
+    font-size: 10px;
+
+    letter-spacing: .22em;
+
+}
+
+
+
+/* ===========================================
+   TREASURY LIST
+=========================================== */
+
+.treasuryList {
+
+    margin: 38px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+}
+
+
+.treasuryList span {
+
+    min-height: 75px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, .035);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: #ddd7e2;
+
+    font-size: 10px;
+
+    font-weight: 950;
+
+    letter-spacing: .12em;
+
+}
+
+
+.transparencySection {
+
+    border-color:
+        rgba(74, 222, 128, .16);
+
+}
+
+
+.transparencySection .sectionLabel,
+.transparencySection .sectionNumber {
+
+    color: var(--green);
+
+}
+
+
+
+/* ===========================================
+   FINAL CHAPTER
+=========================================== */
+
+.finalSection {
+
+    min-height: 800px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(168, 85, 247, .25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(48, 25, 69, .96),
+            rgba(9, 7, 12, .98)
+        );
+
+    border-color: rgba(168, 85, 247, .40);
+
+}
+
+
+.finalWords {
+
+    margin: 45px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    color: white;
+
+    font-size: clamp(38px, 6vw, 72px);
+
+    line-height: .94;
+
+    font-weight: 1000;
+
+    letter-spacing: -.065em;
+
+}
+
+
+.finalWords span:last-child {
+
+    color: var(--purple-light);
+
+}
+
+
+.ntEnding {
+
+    margin-top: 45px;
+
+    padding: 35px;
+
+    background: rgba(0, 0, 0, .25);
+
+    border: 1px solid var(--purple-border);
+
+    border-radius: 20px;
+
+}
+
+
+.ntEnding p {
+
+    color: #a9a1af;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: .10em;
+
+}
+
+
+.ntEnding p + p {
+
+    margin-top: 10px;
+
+}
+
+
+.ntEnding strong {
+
+    margin-top: 20px;
+
+    display: block;
+
+    color: white;
+
+    font-size: clamp(28px, 5vw, 50px);
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    letter-spacing: -.05em;
+
+}
+
+
+
+/* ===========================================
+   END
+=========================================== */
+
+.manifestEnd {
+
+    min-height: 570px;
+
+    margin: 100px 0 50px;
+
+    padding: 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #5b21b6,
+            #7c3aed 50%,
+            #4c1d95
+        );
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 35px 100px rgba(76, 29, 149, .22);
+
+}
+
+
+.endCat {
+
+    position: relative;
+
+}
+
+
+.endCat::before {
+
+    content: "";
+
+    width: 100%;
+
+    aspect-ratio: 1;
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, .20),
+            transparent 65%
+        );
+
+    filter: blur(20px);
+
+}
+
+
+.endCat img {
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-radius: 28px;
+
+    transform: rotate(-3deg);
+
+    filter:
+        drop-shadow(0 30px 60px rgba(0, 0, 0, .35));
+
+}
+
+
+.endCopy {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.manifestEnd .sectionLabel {
+
+    color: rgba(255, 255, 255, .65);
+
+}
+
+
+.manifestEnd h2 span {
+
+    color: white;
+
+}
+
+
+.endCopy p {
+
+    margin-top: 25px;
+
+    color: rgba(255, 255, 255, .72);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.backButton {
+
+    width: fit-content;
+
+    min-height: 58px;
+
+    margin-top: 32px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    background: white;
+
+    color: #13091f;
+
+    border-radius: 12px;
+
+    font-size: 11px;
+
+    font-weight: 950;
+
+    letter-spacing: .11em;
+
+    transition: var(--transition);
+
+}
+
+
+.backButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .20);
+
+}
+
+
+
+/* ===========================================
+   FOOTER
+=========================================== */
+
+footer {
+
+    width: min(calc(100% - 48px), var(--max-width));
+
+    min-height: 100px;
+
+    margin: 0 auto 25px;
+
+    padding: 25px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+footer > div {
+
+    font-size: 11px;
+
+    font-weight: 950;
+
+    letter-spacing: .12em;
+
+}
+
+
+footer > div span {
+
+    margin-left: 7px;
+
+    color: var(--purple-light);
+
+}
+
+
+footer p {
+
+    color: #77707d;
+
+    font-size: 8px;
+
+    font-weight: 950;
+
+    letter-spacing: .22em;
+
+}
+
+
+footer a {
+
+    justify-self: end;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 950;
+
+    letter-spacing: .14em;
+
+    transition: var(--transition);
+
+}
+
+
+footer a:hover {
+
+    color: var(--purple-light);
+
+}
+
+
+
+/* ===========================================
+   ANIMATIONS
+=========================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+/* ===========================================
+   TABLET
+=========================================== */
+
+@media (max-width: 980px) {
+
+    .manifestHeader {
+
+        width: min(
+            calc(100% - 30px),
+            var(--max-width)
+        );
+
+    }
+
+
+    .manifestPage {
+
+        width: min(
+            calc(100% - 30px),
+            var(--max-width)
+        );
+
+    }
+
+
+    .manifestHero {
+
+        min-height: auto;
+
+        padding: 90px 0 60px;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .heroCopy {
+
+        max-width: 720px;
+
+    }
+
+
+    .heroVisual {
+
+        min-height: auto;
+
+        padding: 20px 70px 0;
+
+    }
+
+
+    .manifestCat {
+
+        max-width: 550px;
+
+    }
+
+
+    .stickerOne {
+
+        left: 10%;
+
+    }
+
+
+    .stickerTwo {
+
+        right: 10%;
+
+    }
+
+
+    .manifestSection {
+
+        padding: 50px;
+
+        grid-template-columns: 110px 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .sectionNumber {
+
+        font-size: 45px;
+
+    }
+
+
+    .manifestIntro {
+
+        padding: 50px;
+
+    }
+
+
+    .manifestEnd {
+
+        padding: 50px;
+
+    }
+
+}
+
+
+
+/* ===========================================
+   MOBILE
+=========================================== */
+
+@media (max-width: 640px) {
+
+    .pageBackground {
+
+        background-position: 65% top;
+
+        opacity: .32;
+
+    }
+
+
+    .manifestHeader {
+
+        width: calc(100% - 20px);
+
+        min-height: 62px;
+
+        margin-top: 10px;
+
+        padding: 9px 10px;
+
+        top: 8px;
+
+        grid-template-columns: 1fr auto;
+
+        border-radius: 14px;
+
+    }
+
+
+    .brand img {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .brand strong {
+
+        font-size: 10px;
+
+    }
+
+
+    .brand span {
+
+        font-size: 8px;
+
+    }
+
+
+    .headerTitle {
+
+        display: none;
+
+    }
+
+
+    .homeLink {
+
+        min-height: 41px;
+
+        padding: 0 12px;
+
+        font-size: 8px;
+
+    }
+
+
+    .manifestPage {
+
+        width: calc(100% - 24px);
+
+    }
+
+
+    /* HERO */
+
+    .manifestHero {
+
+        padding: 65px 0 40px;
+
+        gap: 35px;
+
+    }
+
+
+    .eyebrow {
+
+        margin-bottom: 22px;
+
+        font-size: 7px;
+
+    }
+
+
+    .manifestHero h1 {
+
+        font-size: clamp(49px, 16vw, 70px);
+
+    }
+
+
+    .heroLead {
+
+        margin-top: 27px;
+
+        font-size: 15px;
+
+    }
+
+
+    .heroPhrase {
+
+        font-size: 9px;
+
+    }
+
+
+    .startReading {
+
+        width: 100%;
+
+        min-height: 55px;
+
+    }
+
+
+    .heroVisual {
+
+        padding: 5px 10px 0;
+
+    }
+
+
+    .manifestCat {
+
+        border-radius: 24px;
+
+    }
+
+
+    .catGlow {
+
+        width: 90%;
+
+        height: 90%;
+
+    }
+
+
+    .sticker {
+
+        padding: 6px 9px;
+
+        border-width: 2px;
+
+        font-size: 11px;
+
+    }
+
+
+    .stickerOne {
+
+        left: -2px;
+
+        top: 10%;
+
+    }
+
+
+    .stickerTwo {
+
+        right: -2px;
+
+        bottom: 18%;
+
+    }
+
+
+    .catCaption {
+
+        left: 3%;
+
+        bottom: 3%;
+
+        font-size: 7px;
+
+    }
+
+
+    /* INTRO */
+
+    .manifestIntro {
+
+        min-height: 350px;
+
+        margin-bottom: 15px;
+
+        padding: 30px 22px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .introNumber {
+
+        position: absolute;
+
+        right: -5px;
+
+        top: -25px;
+
+        font-size: 150px;
+
+        opacity: .65;
+
+    }
+
+
+    .introContent {
+
+        align-self: end;
+
+    }
+
+
+    /* SECTIONS */
+
+    .manifestSection {
+
+        min-height: auto;
+
+        margin-bottom: 15px;
+
+        padding: 28px 22px 35px;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .sectionSide {
+
+        padding-bottom: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        border-right: 0;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .sectionNumber {
+
+        font-size: 36px;
+
+    }
+
+
+    .sectionWord {
+
+        margin-top: 0;
+
+        writing-mode: initial;
+
+        transform: none;
+
+        font-size: 7px;
+
+    }
+
+
+    .manifestContent h2,
+    .manifestIntro h2,
+    .manifestEnd h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .manifestContent h2 {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .manifestContent > p {
+
+        font-size: 15px;
+
+        line-height: 1.85;
+
+    }
+
+
+    blockquote {
+
+        margin: 30px 0;
+
+        padding: 22px;
+
+        font-size: 16px;
+
+    }
+
+
+    .quoteCard {
+
+        margin: 30px 0;
+
+        padding: 27px 22px;
+
+        font-size: 24px;
+
+    }
+
+
+    .statement {
+
+        margin: 30px 0;
+
+        padding: 22px;
+
+    }
+
+
+    .statement strong {
+
+        font-size: 16px;
+
+    }
+
+
+    .bigStatement {
+
+        margin: 30px 0;
+
+        padding: 25px 22px;
+
+    }
+
+
+    .bigStatement strong {
+
+        font-size: 42px;
+
+    }
+
+
+    .threeWords {
+
+        margin: 30px 0;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .threeWords span {
+
+        min-height: 58px;
+
+        justify-content: flex-start;
+
+        text-align: left;
+
+    }
+
+
+    .questionBlock {
+
+        margin: 30px 0;
+
+        padding: 25px 22px;
+
+        font-size: 15px;
+
+    }
+
+
+    .treasuryList {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .treasuryList span {
+
+        min-height: 60px;
+
+    }
+
+
+    .finalWords {
+
+        margin: 35px 0;
+
+        font-size: 43px;
+
+    }
+
+
+    .ntEnding {
+
+        padding: 25px 20px;
+
+    }
+
+
+    /* END */
+
+    .manifestEnd {
+
+        min-height: auto;
+
+        margin: 70px 0 30px;
+
+        padding: 30px 22px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .endCat img {
+
+        border-radius: 20px;
+
+    }
+
+
+    .backButton {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        width: calc(100% - 24px);
+
+        min-height: 90px;
+
+        grid-template-columns: 1fr auto;
+
+    }
+
+
+    footer p {
+
+        display: none;
+
+    }
+
+}
+
+
+
+/* ===========================================
+   SMALL MOBILE
+=========================================== */
+
+@media (max-width: 420px) {
+
+    .manifestHero h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .manifestContent h2,
+    .manifestIntro h2,
+    .manifestEnd h2 {
+
+        font-size: 37px;
+
+    }
+
+
+    .finalWords {
+
+        font-size: 37px;
+
+    }
+
+
+    .ntEnding strong {
+
+        font-size: 31px;
+
+    }
+
+}
